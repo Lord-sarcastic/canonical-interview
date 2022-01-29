@@ -39,6 +39,7 @@ The application is made up of a single route which is quite simple to use and em
 - `GET /api/v1/events/` -> Retrieve previously logged entries.
 
 ## Testing 🚨
+- Test using browsable API form by visiting the route `/api/v1/events/`
 - Testing with Postman
     - Install [Postman](https://www.getpostman.com/) or any preferred REST API Client such as [Insomnia](https://insomnia.rest/), [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), etc.
     - Get the application up and running by following the instructions in the Installation Guide of this README.
