@@ -25,20 +25,23 @@ class Event(models.Model):
     instance_id = models.CharField(
         help_text="Unique ID for the service instance incase the service is distributed",
         blank=True,
+        null=True,
         max_length=255,
     )
     service_name = models.CharField(
-        max_length=255, help_text="The name of the service that is generating the event", blank=True
+        max_length=255, help_text="The name of the service that is generating the event", blank=True, null=True
     )
     service_info = models.CharField(
         max_length=255,
         help_text="Additional information about the service that is generating the event",
-        blank=True
+        blank=True,
+        null=True,
     )
     request_id = models.CharField(
         max_length=255,
         help_text="An ID for the request that is generating the event. Usually passed around to track events related to a request",
-        blank=True
+        blank=True,
+        null=True
     )
     event_action = models.CharField(
         max_length=255,
@@ -51,6 +54,7 @@ class Event(models.Model):
     )
     event_metadata = models.JSONField(
         default=dict, help_text="Additional metadata about the event",
-        blank=True
+        blank=True,
+        null=True
     )
     timestamp = models.DateTimeField(auto_now_add=True)

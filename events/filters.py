@@ -11,7 +11,7 @@ class EventFilter(filters.FilterSet):
     instance_id = filters.CharFilter(field_name="instance_id", lookup_expr="icontains")
     request_id = filters.CharFilter(field_name="request_id", lookup_expr="icontains")
     event_action = filters.ChoiceFilter(
-        field_name="event_type", choices=Event.Actions.choices
+        field_name="event_action`", choices=Event.Actions.choices
     )
     timestamp_gt = filters.DateTimeFilter(field_name="timestamp", lookup_expr="gt")
     timestamp_lt = filters.DateTimeFilter(field_name="timestamp", lookup_expr="lt")
