@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Events Auditor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex py-24 px-16 bg-gray-900">
+    <main class="rounded-lg bg-white py-8 px-4 shadow-lg leading-loose text-gray-900">
+        <h1 class="text-6xl text-center">Documentation</h1>
+        <p>This service, built with Python, is one that provides access to an audit log of events that have taken place
+            within a system of microservices.</p>
+        <p>Task details can be accessed <a class="text-yellow-600 font-bold"
+                href="https://github.com/Lord-sarcastic/canonical-interview/blob/master/task.md">here</a>.</p>
+        <h2 class="text-4xl" id="technologies-used">Technologies used</h2>
+        <ul class="list-disc list-inside">
+            <li>Server application:<ul class="list-disc list-inside">
+                    <li><a class="text-yellow-600 font-bold" href="https://www.djangoproject.com/">Django</a>, A Python web framework with focus on speed
+                        of
+                        development and perfectionism</li>
+                    <li><a class="text-yellow-600 font-bold" href="https://www.django-rest-framework.org/">Django Rest Framework</a>, A sub-package for
+                        creating REST APIs with Django</li>
+                    <li><a class="text-yellow-600 font-bold" href="https://www.postgresql.org/">PostgreSQL</a>, an open source object-relational database
+                        system.</li>
+                    <li><a class="text-yellow-600 font-bold" href="https://www.getpostman.com/">Postman</a>, a complete API development environment, and
+                        flexibly integrates with the software development cycle for API testing.</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 class="text-4xl" id="installation">Installation</h2>
+        <ul class="list-disc list-inside">
+            <li>Prerequisites:<ul class="list-disc list-inside">
+                    <li>Python 3.9</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="list-disc list-inside">
+            <li>Basic installation:<ul class="list-disc list-inside">
+                    <li>Install <a class="text-yellow-600 font-bold" href="https://www.python.org/downloads/">Python</a> and <a class="text-yellow-600 font-bold"
+                            href="https://www.postgresql.org/">PostgreSQL</a> on your host environment (or PC).</li>
+                    <li>Install <a class="text-yellow-600 font-bold" href="https://pipenv.pypa.io/en/latest/">Pipenv</a> using
+                        <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">pip3 install pipenv</code>.
+                    </li>
+                    <li>Create a Postgres database with an appropriate name. Note the host, port, username and password
+                        of
+                        the database. Ensure the database is running.</li>
+                    <li>Ensure Git is installed, then clone this repository by running
+                        <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">git clone https://github.com/Lord-sarcastic/canonical-interview.git</code> in the
+                        terminal.
+                    </li>
+                    <li>Enter the directory with <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">cd canonical-interview</code></li>
+                    <li>Create a <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">.env</code> file using the <a class="text-yellow-600 font-bold"
+                            href="https://github.com/Lord-sarcastic/canonical-interview/blob/master/.env.example">.env.example</a>
+                        file as a
+                        template. Ensure to fill in appropriate values. The <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">APP_HOST</code> variable refers to the
+                        domain host you&#39;ll be running this app on.</li>
+                    <li>Run <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">pipenv install</code> to install all necessary dependencies for the server application
+                        in
+                        a virtual environment.</li>
+                    <li>Run <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">pipenv shell</code> to activate the virtual environment.</li>
+                    <li>Run <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">python manage.py migrate</code> to run migrations to create database tables</li>
+                    <li>Optionally, you can create a superuser account to access the Django admin with
+                        <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">python manage.py createsuperuser</code>.
+                    </li>
+                    <li>Run the server with <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">python manage.py runserver</code>. It should be running on port 8000.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h2 class="text-4xl" id="api-enpoints-documentation">API Enpoints documentation</h2>
+        <p>Database schema:
+            <img src="{% static 'img/sql-diagram.png' %}" alt="">
+        </p>
+        <p>It can also be viewed in SQL form <a class="text-yellow-600 font-bold"
+                href="https://github.com/Lord-sarcastic/canonical-interview/blob/master/schema.sql">here</a>
+            The application is made up of a single route which is quite simple to use and embodies lots of
+            functionalities
+            including creating the required resources, retrival and filtering as needed.</p>
+        <ul class="list-disc list-inside">
+            <li><code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">POST /api/v1/events/</code> -&gt; Log an entry from a microservice</li>
+            <li><code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">GET /api/v1/events/</code> -&gt; Retrieve previously logged entries.</li>
+        </ul>
+        <h2 class="text-4xl" id="testing-">Testing 🚨</h2>
+        <ul class="list-disc list-inside">
+            <li>Testing with Postman<ul class="list-disc list-inside">
+                    <li>Install <a class="text-yellow-600 font-bold" href="https://www.getpostman.com/">Postman</a> or any preferred REST API Client such
+                        as
+                        <a class="text-yellow-600 font-bold" href="https://insomnia.rest/">Insomnia</a>, <a class="text-yellow-600 font-bold"
+                            href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">Rest
+                            Client</a>,
+                        etc.
+                    </li>
+                    <li>Get the application up and running by following the instructions in the Installation Guide of
+                        this
+                        README.
+                        Use the <a class="text-yellow-600 font-bold" href="https://documenter.getpostman.com/view/10277419/UVeCQTai">API documentation</a>
+                        as
+                        a guide to access available endpoints.</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 class="text-4xl" id="discussion">Discussion</h2>
+        <p>This section contains justifications and improvements that should be made.</p>
+        <h3 class="text-2xl" id="choice-of-database">Choice of Database</h3>
+        <p>Whilst PostgreSQL has been chosen for this project, a better choice would have been a NoSQL database as they
+            generally are more performant as write-heavy, read-seldom databases.</p>
+        <h3 class="text-2xl" id="flexibility">Flexibility</h3>
+        <p>Given that we may have newer event types in future, it is important that the entries are as flexible as
+            possible,
+            so a consistent and universal log level is defined for services to make use of, with <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">INFO</code> more
+            or
+            less a default most likely defined by the microservice involved itself.</p>
+        <p>The crux of flexibility is in <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">event_action</code>, <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">event_metadata</code> and
+            <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">event_data</code>.
+        </p>
+        <ul class="list-disc list-inside">
+            <li>Event action: This defines the type of action carried out by the microservice. Using an enum in place of
+                a
+                separate table is more or less a tradeoff, as other actions may be defined in future. Enums are chosen
+                to
+                ensure consistency across service, with a fallback option, <code class="bg-yellow-600 px-2 py-0.5 rounded-sm opacity-25">OTHER</code> provided for services that
+                do
+                not have an appropriate action listed so far. In the case of insistence of specifying a custom action,
+                we
+                are led to the next field:</li>
+            <li>Event metadata: An optional field containing additional information specified by the service. Here, a
+                microservice could add fields and be as flexible and customized as it should be without being constained
+                by
+                other fields that makes use of Enums for specifying data types.</li>
+            <li>Event data: This should not be confused with the meta data field, as this has to do with the data being
+                interacted upon or being engaged in a request.</li>
+        </ul>
+        <h2 class="text-4xl" id="licence-">Licence 🔐</h2>
+        <p><a class="text-yellow-600 font-bold" href="https://github.com/Lord-sarcastic/canonical-interview/blob/master/LICENSE">MIT licensed</a> © <a class="text-yellow-600 font-bold"
+                href="https://github.com/Lord-sarcatic">Ayodeji Adeoti</a></p>
+        <h2 class="text-4xl" id="credits-">Credits 🙏</h2>
+        <ul class="list-disc list-inside">
+            <li>Half of the Open Source Software community who contribute to the whole of the tools I use</li>
+            <li>Guido Van Rossum, that pretty Python guy</li>
+            <li>Others who would be thanked by my smiles and Quora tags</li>
+        </ul>
+    </main>
+</body>
+
+</html>
