@@ -59,6 +59,9 @@ The crux of flexibility is in `event_action`, `event_metadata` and `event_data`.
 - Event metadata: An optional field containing additional information specified by the service. Here, a microservice could add fields and be as flexible and customized as it should be without being constained by other fields that makes use of Enums for specifying data types.
 - Event data: This should not be confused with the meta data field, as this has to do with the data being interacted upon or being engaged in a request.
 
+### Improvements
+- Write tests with attention to non-framework specific features.
+
 ## Licence 🔐
 [MIT licensed](/LICENSE) © [Ayodeji Adeoti](https://github.com/Lord-sarcatic)
 
