@@ -1,6 +1,6 @@
 This service, built with Python, is one that provides access to an audit log of events that have taken place within a system of microservices.
 
-Task details can be accessed [here](/task.md), while the service is live [here](https://event-auditor.herokuapp.com/api/v1/events) on Heroku.
+Task details can be accessed [here](/task.md), while the service is live [here](https://event-auditor.herokuapp.com/) on Heroku.
 
 
 ## Technologies used
