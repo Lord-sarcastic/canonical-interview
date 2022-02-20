@@ -19,8 +19,8 @@ Task details can be accessed [here](/task.md).
     - Install [Python](https://www.python.org/downloads/) and [PostgreSQL](https://www.postgresql.org/) on your host environment (or PC).
     - Install [Pipenv](https://pipenv.pypa.io/en/latest/) using `pip3 install pipenv`.
     - Create a Postgres database with an appropriate name. Note the host, port, username and password of the database. Ensure the database is running.
-    - Ensure Git is installed, then clone this repository by running `git clone https://github.com/Lord-sarcastic/canonical-interview.git` in the terminal.
-    - Enter the directory with `cd canonical-interview`
+    - Ensure Git is installed, then clone this repository by running `git clone https://github.com/Lord-sarcastic/event-auditor.git` in the terminal.
+    - Enter the directory with `cd event-auditor`
     - Create a `.env` file using the [.env.example](/.env.example) file as a template. Ensure to fill in appropriate values. The `APP_HOST` variable refers to the domain host you'll be running this app on.
     - Run `pipenv install` to install all necessary dependencies for the server application in a virtual environment.
     - Run `pipenv shell` to activate the virtual environment.
